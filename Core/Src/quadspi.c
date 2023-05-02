@@ -487,6 +487,11 @@ uint8_t CSP_QSPI_EnableMemoryMappedMode(void) {
 	if (HAL_QSPI_MemoryMapped(&hqspi1, &sCommand, &sMemMappedCfg) != HAL_OK) {
 		return HAL_ERROR;
 	}
+
+	// Perform a read in order to bypass a bug in the abort function
+	volatile uint8_t *temp = (uint8_t*) 0x90000000;
+	*temp;
+
 	return HAL_OK;
 }
 
