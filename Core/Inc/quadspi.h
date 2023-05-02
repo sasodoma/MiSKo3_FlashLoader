@@ -65,6 +65,7 @@ extern QSPI_HandleTypeDef hqspi1;
 #define RESET_EXECUTE_CMD 0x99
 
 #define HAL_QPSI_TIMEOUT_DEFAULT_VALUE 5000U
+#define W25Q128JV_T_CE_MAX 200000U
 
 /* USER CODE END Private defines */
 
